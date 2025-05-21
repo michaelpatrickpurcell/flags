@@ -1,0 +1,153 @@
+\usepackage[dvipsnames, table]{xcolor}
+
+\usepackage{tikz}
+
+\usepackage{fontspec}
+
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{gensymb}
+
+\newlength{\cardwidth}
+\newlength{\cardheight}
+\newlength{\bleed}
+\newlength{\horizspace}
+\newlength{\vertspace}
+\newlength{\vertdist}
+\newlength{\horizdist}
+
+\setlength{\cardwidth}{2.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+
+\tikzset{cardbackpattern/.pic={
+	\foreach \i in {-1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in}
+		\foreach \j in {-1.75in, -1.5in, -1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in, 1.5in, 1.75in}
+			\draw[ultra thick, black] (\i,\j) circle (0.105in);
+
+	\foreach \i in {-1.375in, -1.125in, -0.875in,-0.625in, -0.375in, -0.125in, 0.125in, 0.375in, 0.625in, 0.875in, 1.125in, 1.375in}
+		\foreach \j in {-1.875in, -1.625in, -1.375in, -1.125in, -0.875in, -0.625in, -0.375in, -0.125in, 0.125in, 0.375in, 0.625in, 0.875in, 1.125in, 1.375in, 1.625in, 1.875in}
+			\draw[ultra thick, black] (\i,\j) circle (0.105in);
+			
+	\foreach \i in {-1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in}
+		\foreach \j in {-1.75in, -1.5in, -1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in, 1.5in, 1.75in}
+			\draw[thick, #1] (\i,\j) circle (0.105in);
+
+	\foreach \i in {-1.375in, -1.125in, -0.875in,-0.625in, -0.375in, -0.125in, 0.125in, 0.375in, 0.625in, 0.875in, 1.125in, 1.375in}
+		\foreach \j in {-1.875in, -1.625in, -1.375in, -1.125in, -0.875in, -0.625in, -0.375in, -0.125in, 0.125in, 0.375in, 0.625in, 0.875in, 1.125in, 1.375in, 1.625in, 1.875in}
+			\draw[thick, #1] (\i,\j) circle (0.105in);
+}}
+
+
+\tikzset{guidecross/.pic={
+	\draw[#1] (-\bleed,0) -- (\bleed,0);
+	\draw[#1] (0, -\bleed) -- (0, \bleed);
+}}
+
+\tikzset{cutguide/.pic={
+	\pic () at (-\cardwidth/2, \cardheight/2) {guidecross={#1}};
+	\pic () at (\cardwidth/2, \cardheight/2) {guidecross={#1}};
+	\pic () at (-\cardwidth/2, -\cardheight/2) {guidecross={#1}};
+	\pic () at (\cardwidth/2, -\cardheight/2) {guidecross={#1}};
+}}
+
+
+
+
+\tikzset{pics/countrycard/.style n args={8}{%
+	code={
+		\begin{scope}
+		\clip (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+		\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+
+		% Pattern for card front
+%		\node[draw, minimum width=\cardwidth, minimum height=\cardheight, inner sep=0pt] at (0,0) {};
+		\node[anchor=base] at (0in, 0ex) {{\large \textbf{#1}}};
+		\begin{scope}
+		\clip[rounded corners=3mm] (0in, 1.625in) -- (1.0in, 1.625in) -- (1.0in, 0.291667in) --(-1.0in, 0.291667in) -- (-1.0in, 1.625in) -- cycle;
+		\node[inner sep=0pt, anchor=north] () at (0,1.625in) {\includegraphics[width=\cardwidth-0.25in]{Images/PNG1024/#2}};
+		\end{scope}
+		\draw[rounded corners=3mm, draw, very thick] (0in, 1.625in) -- (1.0in, 1.625in) -- (1.0in, 0.291667in) --(-1.0in, 0.291667in) -- (-1.0in, 1.625in) -- cycle;
+		\node[anchor=north, minimum height=1.5in, minimum width=2.25in] at (0,-0.14in) {
+		\begin{tabular}{m{0.675in}m{1in}}
+		Population & #3 \\\midrule
+		Total Area & #4\\\midrule
+		GDP (PPP) & #5\\\midrule
+		Capital & #6 \\\midrule
+		Latitude & #7 \\\midrule
+		Longitude & #8\\
+		\end{tabular}		
+		};	
+		\node[draw, very thick, rounded corners=3mm, anchor=south, minimum height=1.5in, minimum width=\cardwidth-0.25in] at (0,-1.625in) {};
+		\end{scope}
+		% Cutting guides for corners of the cards	
+		\pic () at (0,0) {cutguide={black}};
+}}}
+
+
+\tikzset{pics/uniformcard/.style n args={2}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card back
+	\path[fill=#1] (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	\pic () at (0,0) {cardbackpattern={#2}};
+	% Cutting guides for corners of the cards	
+%	\pic () at (0,0) {cutguide={#2}};
+\end{scope}
+}}}
+
+
+\tikzset{pics/worldcard/.style n args={2}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card back
+	\path[fill=#1] (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	      
+%	\pic () at (0,0) {cardbackpattern={ForestGreen}};
+	\node[inner sep=0pt] () at (0,0) {\includegraphics[height=3.75in]{Images/starfield.png}};
+	\node[inner sep=0pt] () at (0,0.75in) {\includegraphics[width=1.375in]{Images/north_pole.png}};
+	\node[inner sep=0pt] () at (0,-0.75in) {\includegraphics[width=1.375in]{Images/south_pole.png}};
+
+	\draw[ultra thick, oceanblue, rounded corners = 3mm] (0, 1.625in) -- (1in, 1.625in) -- (1in, -1.625in) -- (-1in, -1.625in) -- (-1in, 1.625in) -- cycle;
+
+	% Cutting guides for corners of the cards	
+%	\pic () at (0,0) {cutguide={#2}};
+\end{scope}
+}}}

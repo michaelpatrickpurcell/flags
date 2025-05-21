@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+
+
+\definecolor{oceanblue}{HTML}{b2e6fa}
+\begin{document}
+\begin{tikzpicture}
+\Huge
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (\horizdist,\vertdist) {worldcard={white}{red}};
+\pic at (0,\vertdist) {worldcard={white}{red}};
+\pic at (-\horizdist,\vertdist) {worldcard={white}{red}};
+
+\pic at (\horizdist,0) {worldcard={white}{red}};
+\pic at (0,0) {worldcard={white}{red}};
+\pic at (-\horizdist,0) {worldcard={white}{red}};
+
+\pic at (\horizdist,-\vertdist) {worldcard={white}{red}};
+\pic at (0,-\vertdist) {worldcard={white}{red}};
+\pic at (-\horizdist,-\vertdist) {worldcard={white}{red}};
+
+\end{tikzpicture}
+\end{document}

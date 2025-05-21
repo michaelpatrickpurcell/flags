@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard={Austria}{at}{9,027,999}{32,386 sq mi}{\$667.153 bn}{Vienna}{48° 12′ N}{16° 21′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard={Malaysia}{my}{34,564,810}{127,724 sq mi}{\$1,430.000 bn}{Kuala Lumpur}{3° 08′ N}{101° 41′ E}};
+\pic at (\horizdist,\vertdist) {countrycard={Vietnam}{vn}{100,300,000}{127,933 sq mi}{\$1,559.000 bn}{Hanoi}{21° 02′ N}{105° 51′ E}};
+%%
+\pic at (-\horizdist,0\vertdist) {countrycard={Egypt}{eg}{109,450,000}{390,121 sq mi}{\$2,372.000 bn}{Cairo}{30° 02′ N}{31° 13′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard={Morocco}{ma}{37,493,183}{172,410 sq mi}{\$396.685 bn}{Rabat}{34° 02′ N}{6° 51′ W}};
+\pic at (\horizdist,0\vertdist) {countrycard={Finland}{fi}{5,635,971}{130,559 sq mi}{\$361.312 bn}{Helsinki}{60° 10′ N}{24° 56′ E}};
+%%%
+\pic at (-\horizdist,-\vertdist) {countrycard={Portugal}{pt}{10,639,726}{35,610 sq mi}{\$536.096 bn}{Lisbon}{38° 46′ N}{9° 09′ W}};
+\pic at (0\horizdist,-\vertdist) {countrycard={Uruguay}{uy}{3,499,451}{68,037 sq mi}{\$107.946 bn}{Montevideo}{34° 53′ S}{56° 10′ W}};
+\pic at (\horizdist,-\vertdist) {countrycard={Bolivia}{bo}{11,312,620}{424,164 sq mi}{\$144.098 bn}{Sucre}{19° 02′S}{65° 15′ W}};
+\end{tikzpicture}
+\end{document}

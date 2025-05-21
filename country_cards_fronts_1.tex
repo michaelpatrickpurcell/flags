@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard={Australia}{au}{27,829,800}{2,968,464 sq mi}{\$1,980.000 bn}{Canberra}{35° 18' S}{149° 07' E}};
+\pic at (0\horizdist,\vertdist) {countrycard={United States}{us}{340,110,988}{3,796,742 sq mi}{\$29,168.000 bn}{Washington D.C.}{38° 54' N}{77° 01' W}};
+\pic at (\horizdist,\vertdist) {countrycard={China}{cn}{1,408,280,000}{3,705,407 sq mi}{\$40,716.000 bn}{Beijing}{38° 54' N}{116° 24' E}};
+
+\pic at (-\horizdist,0\vertdist) {countrycard={United Kingdom}{gb}{68,265,209}{94,354 sq mi}{\$4,282.000 bn}{London}{51° 30' N}{0° 08' W}};
+\pic at (0\horizdist,0\vertdist) {countrycard={France}{fr}{68,605,616}{244,288 sq mi}{\$4,359.000 bn}{Paris}{48° 51' N}{2° 21' E}};
+\pic at (\horizdist,0\vertdist) {countrycard={Russia}{ru}{146,028,325}{6,601,670 sq mi}{\$7,130.000 bn}{Moscow}{55° 45' N}{37° 37' E}};
+%
+\pic at (-\horizdist,-\vertdist) {countrycard={Algeria}{dz}{46,700,000}{919,595 sq mi}{\$768.520 bn}{Algiers}{36° 44' N}{03° 05' E}};
+\pic at (0\horizdist,-\vertdist) {countrycard={Greece}{gr}{10,400,720}{919,595 sq mi}{\$467.590 bn}{Athens}{37° 59' N}{23° 44' E}};
+\pic at (\horizdist,-\vertdist) {countrycard={Denmark}{dk}{5,982,117}{16,639 sq mi}{\$496.696 bn}{Copenhagen}{55° 41' N}{12° 34' E}};
+\end{tikzpicture}
+\end{document}

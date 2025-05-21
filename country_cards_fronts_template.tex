@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\pic at (0\horizdist,\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\pic at (\horizdist,\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\pic at (0\horizdist,0\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\pic at (\horizdist,0\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\pic at (0\horizdist,-\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\pic at (\horizdist,-\vertdist) {countrycard={}{}{}{}{}{}{}{}};
+\end{tikzpicture}
+\end{document}
