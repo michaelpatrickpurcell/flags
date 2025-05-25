@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Honduras}{hn}{9,571,352}{43,433 sq mi}{\$75.030 bn}{Tegucigalpa}{14° 06′ N}{87° 13′ W}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Costa Rica}{cr}{5,044,197}{19,760.68 sq mi}{\$169.034 bn}{San José}{9° 56′ N}{84° 05′ W}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of El Salvador}{sv}{6,029,976}{8,124 sq mi}{\$88.323 bn}{San Salvador}{13° 42′ N}{89° 12′ W}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Republic of Nicaragua}{ni}{6,676,948}{50,338 sq mi}{\$56.697 bn}{Managua}{12° 06′ N}{86° 14′ W}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of Chile}{cl}{19,629,588}{291,932 sq mi}{\$674.388 bn}{Santiago}{33° 26′ S}{70° 40′ W}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Colombia}{co}{52,695,952}{440,831 sq mi}{\$1,042.000 bn}{Bogotá}{4° 35′ N}{74° 04′ W}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Peru}{pe}{34,352,720}{496,225 sq mi}{\$643.050 bn}{Lima}{12° 03′ S}{77° 02′ W}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of Suriname}{sr}{632,638}{63,250 sq mi}{\$11.435 bn}{Paramaribo}{5° 50′ N}{55° 10′ W}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Bolivarian Republic\\[0.25ex]of Venezuela}{ve}{30,518,260}{353,841 sq mi}{\$92.210 bn}{Caracas}{10° 28′N}{66° 54′ W}};
+\end{tikzpicture}
+\end{document}

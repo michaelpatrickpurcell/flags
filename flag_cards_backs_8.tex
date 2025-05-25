@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\Huge
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (\horizdist,\vertdist) {flagcard={mn}{}};
+\pic at (0,\vertdist) {flagcard={cz}{}};
+\pic at (-\horizdist,\vertdist) {flagcard={py}{}};
+%
+\pic at (\horizdist,0) {flagcard={gt}{black}};
+\pic at (0,0) {flagcard={tm}{black}};
+\pic at (-\horizdist,0) {flagcard={ng}{black}};
+%
+\pic at (\horizdist,-\vertdist) {flagcard={lv}{black}};
+\pic at (0,-\vertdist) {flagcard={ph}{black}};
+\pic at (-\horizdist,-\vertdist) {flagcard={bz}{black}};
+
+\end{tikzpicture}
+\end{document}

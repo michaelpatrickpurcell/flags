@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Nauru}{nr}{11,919}{8 sq mi}{\$0.132 bn}{Yaren*}{0° 31′ S}{166° 56′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Tuvalu}{tv}{10,643}{10 sq mi}{\$0.686 bn}{Funafuti}{8° 31′ S}{179° 12′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Antigua and Barbuda}{ag}{100,772}{170 sq mi}{\$2.600 bn}{St. John's}{17° 07′ N}{61° 51′ W}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Commonwealth of\\[0.25ex]the Bahamas}{bs}{412,628}{5,383 sq mi}{\$18.989 bn}{Nassau}{25° 04′ N}{77° 20′ W}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Barbados}{bb}{281,998}{169 sq mi}{\$5.436 bn}{Bridgetown}{13° 05′ N}{59° 37′ W}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Cuba}{cu}{9,748,007}{42,800 sq mi}{\$254.865 bn}{Havana}{23° 08′ N}{82° 23′ W}};
+%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Commonwealth of Dominica}{dm}{72,412}{290 sq mi}{\$0.688 bn}{Roseau}{15°18′N 61°23′W}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Dominican Republic}{do}{11,532,151}{18,792 sq mi}{\$334.292 bn}{Santo Domingo}{18° 27′ N}{69° 56′ W}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Grenada}{gd}{114,621}{133 sq mi}{\$2.300 bn}{St. George's}{12° 03′ N}{61° 44′ W}};
+\end{tikzpicture}
+\end{document}

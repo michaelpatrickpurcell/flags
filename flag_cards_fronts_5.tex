@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Indonesia}{id}{284,973,643}{735,358 sq mi}{\$4,980.000 bn}{Jakarta}{6° 10′ S}{106° 49′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Argentine Republic\\[0.25ex](Argentina)}{ar}{47,067,441}{1,073,397 sq mi}{\$1,354.000 bn}{Buenos Ares}{34° 36′ S}{58° 23′ W}};
+\pic at (\horizdist,\vertdist) {countrycard2={New Zealand}{nz}{5,497,730}{101,660 sq mi}{\$279.183 bn}{Wellington}{41° 18′ S}{174° 47′ E}};
+%%%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Kingdom of Spain}{es}{49,153,849}{195,360 sq mi}{\$2,811.000 bn}{Madrid}{40° 26′ N}{3° 42′ W}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of Kazakhstan}{kz}{20,286,084}{1,052,100 sq mi}{\$693.415 bn}{Astana}{51° 10′ N}{71° 26′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Mali}{ml}{21,990,607}{478,841 sq mi}{\$61.625 bn}{Bamako}{12° 39′ N}{8° 00′ W}};
+%%%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Rwanda}{rw}{13,623,302}{10,347 sq mi}{\$42.346 bn}{Kigali}{1° 57′ S}{30° 04′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of Singapore}{sg}{6,040,000}{284.1 sq mi}{\$564.700 bn}{Singapore}{1° 17′ N}{103° 50′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Kingdom of Saudi Arabia}{sa}{32,175,224}{830,000 sq mi}{\$2,112.000 bn}{Riyadh}{24° 39′ N}{46° 46′ E}};
+\end{tikzpicture}
+\end{document}

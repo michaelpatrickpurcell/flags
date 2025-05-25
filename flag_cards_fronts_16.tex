@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Azerbaijan}{az}{10,353,296}{33,400 sq mi}{\$199.195 bn}{Baku}{40° 23′ N}{49° 50′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Belarus}{by}{9,109,280}{80,153 sq mi}{\$221.186 bn}{Minsk}{53° 55′ N}{27° 33′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Kingdom of Belgium}{be}{11,812,354}{11,849 sq mi}{\$889.833 bn}{Brussels}{50° 51′ N}{4° 21′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Bosnia and\\[0.25ex]Herzegovina}{ba}{3,422,000}{19,772 sq mi}{\$77.90 bn}{Sarajevo}{43° 52′ N}{18° 25′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of Bulgaria}{bg}{6,437,360}{42,854.9 sq mi}{\$264.699 bn}{Sofia}{42° 41′ N}{23° 19′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Croatia}{hr}{3,861,967}{21,838 sq mi}{\$198.27 bn}{Zagreb}{45° 48′ N}{15° 58′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Estonia}{ee}{1,373,101}{17,504 sq mi}{\$61.598 bn}{Tallinn}{59° 25′ N}{24° 45′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Georgia}{ge}{3,694,608}{26,900 sq mi}{\$113.583 bn}{Tbilisi}{41° 43′ N}{44° 47′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Hungary}{hu}{9,584,627}{35,920 sq mi}{\$469.647 bn}{Budapest}{47° 26′ N}{19° 15′ E}};
+\end{tikzpicture}
+\end{document}

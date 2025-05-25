@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Gabonese Republic\\[0.25ex](Gabon)}{ga}{2,397,368}{103,347 sq mi}{\$41.922 bn}{Libreville}{0° 23′ N}{9° 27′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Ghana}{gh}{34,612,532}{93,000 sq mi}{\$227.189 bn}{Accra}{5° 33′ N}{0° 12′ W}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of Kenya}{ke}{52,428,290}{224,081 sq mi}{\$401.970 bn}{Nairobi}{1° 17′ S}{36° 49′ E}};
+%%%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Republic of Mozambique}{mz}{34,881,007}{309,500 sq mi}{\$21.936 bn}{Maputo}{25° 58′ S}{32° 35′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={United Arab Emirates}{ae}{11,027,129}{32,300 sq mi}{\$849.800 bn}{Abu Dhabi}{24° 28′ N}{54° 22′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of India}{in}{1,428,627,663}{1,269,219 sq mi}{\$17,650.000 bn}{New Delhi}{28° 37′ N}{77° 13′ E}};
+%%%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Japan}{jp}{123,400,000}{145,937 sq mi}{\$6,741.000 bn}{Tokyo}{35° 41′ N}{139° 42′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of Albania}{al}{2,402,113}{11,100 sq mi}{\$63.080 bn}{Tirana}{41° 20′ N}{19° 49′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Federative Republic\\[0.25ex]of Brazil}{br}{212,583,750}{3,287,956 sq mi}{\$4,891.000 bn}{Brasilia}{15° 48′ S}{47° 53′ W}};
+\end{tikzpicture}
+\end{document}

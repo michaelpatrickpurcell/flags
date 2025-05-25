@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Fiji}{fj}{926,276}{7,056 sq mi}{\$15.152 bn}{Suva}{18° 10′ S}{178° 27′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Solomon Islands}{sb}{734,887}{11,157 sq mi}{\$1.680 bn}{Honiara}{9° 25′ S}{159° 57′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of Vanuatu}{vu}{335,908}{4,706 sq mi}{\$1.002 bn}{Port Vila}{17° 44′ S}{168° 19′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Independent State\\[0.25ex]of Samoa}{ws}{205,557}{1,093 sq mi}{\$1.225 bn}{Apia}{13° 50′ S}{171° 45′ W}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of Kiribati}{ki}{121,388}{313 sq mi}{\$0.297 bn}{Tarawa}{1° 28′ N}{173° 02′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Federated States\\[0.25ex]of Micronesia}{fm}{104,468}{271 sq mi}{\$0.367 bn}{Palikir}{6° 55′ N}{158° 11′ E}};
+%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Kingdom of Tonga}{to}{100,209}{289 sq mi}{\$0.655 bn}{Nukuʻalofa}{21° 08′ S}{175° 12′ W}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of the\\[0.25ex]Marshall Islands}{mh}{42,418}{70 sq mi}{\$0.215 bn}{Majuro}{7° 07′ N}{171° 04′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Republic of Palau}{pw}{18,024}{177 sq mi}{\$0.308 bn}{Ngerulmud}{7° 30′ N}{134° 37′ E}};
+\end{tikzpicture}
+\end{document}

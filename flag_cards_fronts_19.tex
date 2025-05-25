@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard3={Brunei Darussalam\\[0.25ex](Brunei)}{bn}{460,345}{2,226 sq mi}{\$33.875 bn}{{Bandar\phantom{i}Seri}\quad{}Begawan}{4° 30′ N}{114° 40′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Maldives}{mv}{515,132}{115 sq mi}{\$13.867 bn}{Malé}{4° 10′ N}{73° 30′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of the\\[0.25ex]Union of Myanmar}{mm}{55,770,232}{261,229 sq mi}{\$283.572 bn}{Naypyidaw}{21° 00′ N}{96° 00′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Federal Democratic\\[0.25ex]Republic of Nepal}{np}{31,122,387}{56,956 sq mi}{\$169.120 bn}{Kathmandu}{28° 10′ N}{84° 15′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Democratic Socialist\\[0.25ex]Republic of Sri Lanka}{lk}{21,763,170}{25,332.2 sq mi}{\$342.600 bn}{Kotte*}{6° 55′ N}{79° 55′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Tajikistan}{tj}{10,786,734}{55,300 sq mi}{\$59.415 bn}{Dushanbe}{38° 33′ N}{68° 48′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Democratic Republic of \\[0.25ex] Timor-Leste (East Timor)}{tl}{1,354,662}{5,770 sq mi}{\$6.650 bn}{Dili}{8° 33′ S}{125° 34′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of Uzbekistan}{uz}{37,535,605}{172,700 sq mi}{\$425.238 bn}{Tashkent}{41° 19′ N}{69° 16′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Republic of China\\[0.25ex](Taiwan)}{tw}{23,396,049}{13,976 sq mi}{\$1,685.000 bn}{Taipei}{25° 04′ N}{121° 31′ E}};
+\end{tikzpicture}
+\end{document}

@@ -7,6 +7,7 @@
 \usepackage{booktabs}
 \usepackage{calc}
 \usepackage{gensymb}
+\usepackage{setspace}
 
 \newlength{\cardwidth}
 \newlength{\cardheight}
@@ -100,6 +101,78 @@
 }}}
 
 
+\tikzset{pics/countrycard2/.style n args={8}{%
+	code={
+		\begin{scope}
+		\clip (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+		\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+
+		% Pattern for card front
+%		\node[minimum width=\cardwidth, minimum height=\cardheight, inner sep=0pt] at (0,0) {};
+		\node[inner sep=0pt, text width=\cardwidth-0.25in, align=center] at (0in, 0.25in-0.75ex) {{\large\textbf{#1}}};
+		\node[inner sep=0pt, anchor=north] () at (0,1.625in) {\includegraphics[width=\cardwidth-0.125in]{Images/Maps/#2_map.png}};
+		\node[minimum width=2.25in, anchor=south, inner sep=0pt] at (0,-1.5in) {
+		\begin{tabular}{m{0.675in}m{1in}}\toprule
+		Population & #3 \\[1ex]
+		Total Area & #4\\[1ex]
+		GDP (PPP) & #5\\[1ex]
+		Capital & #6 \\[1ex]
+		Latitude & #7 \\[1ex]
+		Longitude & #8\\\bottomrule
+		\end{tabular}		
+		};	
+%		\node[draw, very thick, rounded corners=3mm, anchor=south, minimum height=1.5in, minimum width=\cardwidth-0.25in] at (0,-1.625in) {};
+		\end{scope}
+		% Cutting guides for corners of the cards	
+		\pic () at (0,0) {cutguide={black}};
+}}}
+
+\tikzset{pics/countrycard3/.style n args={8}{%
+	code={
+		\begin{scope}
+		\clip (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+		\path[fill=white] (-\cardwidth/2 - \bleed, 0in) --%
+		      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+		      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+		      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+		      cycle;
+
+		% Pattern for card front
+%		\node[minimum width=\cardwidth, minimum height=\cardheight, inner sep=0pt] at (0,0) {};
+		\node[inner sep=0pt, text width=\cardwidth-0.25in, align=center] at (0in, 0.25in-0.75ex) {{\large\textbf{#1}}};
+		\node[inner sep=0pt, anchor=north] () at (0,1.625in) {\includegraphics[width=\cardwidth-0.125in]{Images/Maps/#2_map.png}};
+		\node[minimum width=2.25in, anchor=south, inner sep=0pt] at (0,-1.656in) {
+		\begin{tabular}{m{0.675in}m{1in}}\toprule
+		Population & #3 \\[1ex]
+		Total Area & #4\\[1ex]
+		GDP (PPP) & #5\\[1ex]
+		Capital & #6 \\[2ex]
+		Latitude & #7 \\[1ex]
+		Longitude & #8\\\bottomrule
+		\end{tabular}		
+		};	
+%		\node[draw, very thick, rounded corners=3mm, anchor=south, minimum height=1.5in, minimum width=\cardwidth-0.25in] at (0,-1.625in) {};
+		\end{scope}
+		% Cutting guides for corners of the cards	
+		\pic () at (0,0) {cutguide={black}};
+}}}
+
 \tikzset{pics/uniformcard/.style n args={2}{
 	code={
 	\begin{scope}
@@ -150,4 +223,47 @@
 	% Cutting guides for corners of the cards	
 %	\pic () at (0,0) {cutguide={#2}};
 \end{scope}
+}}}
+
+\tikzset{pics/worldcard2/.style n args={2}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card back	      
+%	\pic () at (0,0) {cardbackpattern={ForestGreen}};
+	\node[inner sep=0pt] () at (0,0) {\includegraphics[height=3.75in]{Images/starfield.png}};
+	\node[inner sep=0pt, rotate=90] () at (0,0) {\includegraphics[width=3.0in]{Images/Maps/#1_map.png}};
+
+	\draw[ultra thick, oceanblue, rounded corners = 3mm] (0, 1.625in) -- (1in, 1.625in) -- (1in, -1.625in) -- (-1in, -1.625in) -- (-1in, 1.625in) -- cycle;
+
+	% Cutting guides for corners of the cards	
+%	\pic () at (0,0) {cutguide={#2}};
+\end{scope}
+}}}
+
+\tikzset{pics/flagcard/.style n args={2}{
+	code={
+%	\node[draw, minimum height=3.5in, minimum width=2.16667in+0.25in] at (0,0) {};
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	% Pattern for card back	      
+	\begin{scope}
+	\clip[rounded corners=3mm] (0,1.625in) -- (1.08333in, 1.625in) -- (1.08333in, -1.625in) -- (-1.08333in,-1.625in) -- (-1.08333in,1.625in) -- cycle;
+	\node[inner sep=0pt, rotate=-90] () at (0,0) {\includegraphics[width=3.25in]{Images/PNG1024/#1.png}};
+	\end{scope}
+	\path[rounded corners=3mm, draw, very thick] (0,1.625in) -- (1.08333in, 1.625in) -- (1.08333in, -1.625in) -- (-1.08333in,-1.625in) -- (-1.08333in,1.625in) -- cycle;
+	% Cutting guides for corners of the cards	
+%	\pic () at (0,0) {cutguide={#2}};
+\end{scope}
+
 }}}

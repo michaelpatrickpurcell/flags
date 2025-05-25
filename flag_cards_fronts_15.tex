@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={State of Kuwait}{kw}{4,985,716}{6,880 sq mi}{\$249.300 bn}{Kuwait City}{29° 22′ N}{47° 58′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Lebanon}{lb}{5,364,482}{4,036 sq mi}{\$78.233 bn}{Beirut}{33° 54′ N}{35° 32′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Sultanate of Oman}{om}{5,494,691}{119,500 sq mi}{\$222.060 bn}{Muscat}{23° 35′ N}{58° 24′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={State of Palestine}{ps}{5,483,450}{2,320 sq mi}{\$36.391 bn}{Jerusalem}{31° 47′ N}{35° 13′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={State of Qatar}{qa}{3,063,005}{4,471 sq mi}{\$356.000 bn}{Doha}{25° 18′ N}{51° 31′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Syrian Arab Republic\\[0.25ex](Syria)}{sy}{25,255,139}{71,500 sq mi}{\$50.280 bn}{Damascus}{33° 30′ N}{36° 18′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Yemen}{ye}{41,385,529}{175,871 sq mi}{\$69.963 bn}{Sanaa}{15° 20′ N}{44° 12′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Principality of Andorra}{ad}{87,486}{181 sq mi}{\$6.001 bn}{Andorra la Vella}{42° 30′ N}{1° 31′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Republic of Armenia}{am}{3,081,100}{11,484 sq mi}{\$74.294 bn}{Yerevan}{40° 11′ N}{44° 31′ E}};
+\end{tikzpicture}
+\end{document}
+

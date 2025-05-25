@@ -1,0 +1,31 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+%\definecolor{oceanblue}{HTML}{addae6}
+\begin{document}
+\begin{tikzpicture}
+\Huge
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (\horizdist,\vertdist) {flagcard={at}{}};
+\pic at (0,\vertdist) {flagcard={my}{}};
+\pic at (-\horizdist,\vertdist) {flagcard={vn}{}};
+%
+\pic at (\horizdist,0) {flagcard={eg}{black}};
+\pic at (0,0) {flagcard={ma}{black}};
+\pic at (-\horizdist,0) {flagcard={fi}{black}};
+%
+\pic at (\horizdist,-\vertdist) {flagcard={pt}{black}};
+\pic at (0,-\vertdist) {flagcard={uy}{black}};
+\pic at (-\horizdist,-\vertdist) {flagcard={bo}{black}};
+
+\end{tikzpicture}
+\end{document}

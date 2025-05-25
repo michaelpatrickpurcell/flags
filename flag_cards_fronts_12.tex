@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Central African Republic}{cf}{5,650,957}{240,535 sq mi}{\$5.678 bn}{Bangui}{4° 22′ N}{18° 35′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Chad}{td}{19,093,595}{500,000 sq mi}{\$32.375 bn}{N'Djamena}{12° 06′ N}{15° 02′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of the Congo}{cg}{6,228,784}{132,000 sq mi}{\$27.994 bn}{Brazzaville}{4° 16′ S}{15° 17′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Democratic Republic\\[0.25ex]of the Congo}{cd}{111,050,097}{905,567 sq mi}{\$160.197 bn}{Kinshasa}{4° 19′ S}{15° 19′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of\\[0.25ex]Equatorial Guinea}{gq}{1,795,834}{10,830 sq mi}{\$28.356 bn}{Malabo}{3° 44′ N}{8° 46′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Democratic Republic of\\[0.25ex]São Tomé and Príncipe}{st}{220,372}{372 sq mi}{\$1.000 bn}{São Tomé}{0° 20′ N}{6° 44′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Botswana}{bw}{2,359,609}{224,610 sq mi}{\$54.647 bn}{Gaborone}{24° 39′ S}{25° 54′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Kingdom of Eswatini}{sz}{1,236,126}{6,704 sq mi}{\$13.797 bn}{Mbabane*}{26° 19′ S}{31° 08′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Kingdom of Lesotho}{ls}{2,210,646}{11,720 sq mi}{\$6.915 bn}{Maseru}{29° 18′ S}{27° 29′ E}};
+\end{tikzpicture}
+\end{document}

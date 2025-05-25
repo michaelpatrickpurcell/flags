@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Principality of Liechtenstein}{li}{41,232}{62 sq mi}{\$4.978 bn}{Vaduz}{47° 08′ N}{9° 31′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Lithuania}{lt}{2,897,430}{25,200 sq mi}{\$161.454 bn}{Vilnius}{54° 41′ N}{25° 19′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Grand Duchy of\\[0.25ex]Luxembourg}{lu}{681,973}{998.6 sq mi}{\$106.505 bn}{Luxembourg}{49° 36′ N}{6° 07′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Republic of Moldova}{md}{2,423,300}{13,067 sq mi}{\$46.365 bn}{Chișinău}{47° 00′ N}{28° 55′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Principality of Monaco}{mc}{38,423}{1 sq mi}{\$7.672 bn}{Monaco}{43° 43′ N}{07° 25′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Montenegro}{me}{623,327}{5,360 sq mi}{\$17.431 bn}{Podgorica}{42° 47′ N}{19° 28′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of\\[0.25ex]North Macedonia}{mk}{1,836,713}{9,821 sq mi}{\$51.997 bn}{Skopje}{42° 00′ N}{21° 26′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Romania}{ro}{19,064,409}{92,046 sq mi}{\$926.759 bn}{Bucharest}{44° 25′ N}{26° 06′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Republic of San Marino}{sm}{34,042}{23.63 sq mi}{\$2.978 bn}{San Marino}{43° 56′ N}{12° 26′ E}};
+\end{tikzpicture}
+\end{document}

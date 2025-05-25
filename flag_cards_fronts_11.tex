@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Mauritius}{mu}{1,235,260}{790 sq mi}{\$42.810 bn}{Port Louis}{20° 09′ S}{57° 30′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Seychelles}{sc}{121,355}{176 sq mi}{\$4.175 bn}{Victoria}{4° 37′ S}{55° 27′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of South Sudan}{ss}{12,703,714}{248,777 sq mi}{\$4.700 bn}{Juba}{4° 51′ N}{31° 36′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={United Republic\\[0.25ex]of Tanzania}{tz}{67,462,121}{365,756 sq mi}{\$269.670 bn}{Dodoma}{6° 10′ S}{35° 44′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of Uganda}{ug}{49,283,041}{93,065 sq mi}{\$145.157 bn}{Kampala}{00° 18′ N}{32° 34′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Zambia}{zm}{20,216,029}{290,587 sq mi}{\$83.687 bn}{Lusaka}{15° 25′ S}{28° 17′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Zimbabwe}{zw}{16,868,409}{150,872 sq mi}{\$44.448 bn}{Harare}{17° 49′ S}{31° 03′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of Angola}{ao}{37,290,193}{481,400 sq mi}{\$260.323 bn}{Luanda}{8° 50′ S}{13° 20′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Republic of Cameroon}{cm}{30,966,105}{183,569 sq mi}{\$141.930 bn}{	Yaoundé}{3° 52′ N}{11° 31′ E}};
+\end{tikzpicture}
+\end{document}

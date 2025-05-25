@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={State of Libya}{ly}{7,361,263}{679,363 sq mi}{\$183.390 bn}{Tripoli}{32° 52′ N}{13° 11′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Republic of Sudan}{sd}{50,467,278}{728,215 sq mi}{\$172.651 bn}{Khartoum}{15° 36′ N}{32° 30′ E}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of Tunisia}{tn}{11,972,169}{63,170 sq mi}{\$176.870 bn}{Tunis}{36° 49′ N}{10° 11′ E}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Republic of Burundi}{bi}{14,151,540}{10,747 sq mi}{\$13.980 bn}{Gitega*}{3° 25′S}{29° 55′ E}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Union of the Comoros}{km}{883,075}{863 sq mi}{\$3.432 bn}{Moroni}{11° 41′ S}{43° 15′ E}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Republic of Djibouti}{dj}{1,066,809}{9,000 sq mi}{\$7.193 bn}{Djbouti City}{11° 36′ N}{43° 10′ E}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={State of Eritrea}{er}{15°20′N 38°55′E}{46,000 sq mi}{\$6.369 bn}{Asmara}{15° 20′ N}{38° 55′ E}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Federal Democratic\\[0.25ex]Republic of Ethiopia}{et}{132,900,000}{426,400 sq mi}{\$434.440 bn}{Addis Ababa}{9° 01′ N}{38° 45′ E}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Republic of Malawi}{mw}{21,240,689}{45,747 sq mi}{\$37.919 bn}{Lilongwe}{13° 57′ S}{33° 42′ E}};
+\end{tikzpicture}
+\end{document}

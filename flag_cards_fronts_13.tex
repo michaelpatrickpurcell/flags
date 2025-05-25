@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+\setmainfont{Roboto}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0.0625in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\path (-105mm, -148.5mm) -- (105mm, 148.5mm);
+\pic at (-\horizdist,\vertdist) {countrycard2={Republic of Benin}{bj}{13,754,688}{44,310 sq mi}{\$59.241 bn}{Porto-Novo}{6° 29′ N}{2° 36′ E}};
+\pic at (0\horizdist,\vertdist) {countrycard2={Burkina Faso}{bf}{22,489,126}{105,878 sq mi}{\$62.788 bn}{Ouagadougou}{12° 22′ N}{1° 32′ W}};
+\pic at (\horizdist,\vertdist) {countrycard2={Republic of Cabo Verde\\[0.25ex](Cape Verde)}{cv}{593,149}{1,557 sq mi}{\$5.717 bn}{Praia}{14° 54′ N}{23° 30′ W}};
+%
+\pic at (-\horizdist,0\vertdist) {countrycard2={Republic of the Gambia}{gm}{2,422,712}{4,400 sq mi}{\$7.502 bn}{Banjul}{13° 27′ N}{16° 34′ W}};
+\pic at (0\horizdist,0\vertdist) {countrycard2={Republic of Guinea}{gn}{13,986,179}{94,926 sq mi}{\$48.750 bn}{Conakry}{9° 31′ N}{13° 42′ W}};
+\pic at (\horizdist,0\vertdist) {countrycard2={Repbulic of Guinea-Bissau}{gw}{2,080,000}{13,948 sq mi}{\$2.048 bn}{Bissau}{11° 52′ N}{15° 36′ W}};
+%%
+\pic at (-\horizdist,-\vertdist) {countrycard2={Republic of Côte d'Ivoire\\[0.25ex](Ivory Coast)}{ci}{31,500,000}{124,503 sq mi}{\$202.647 bn}{Yamoussoukro}{6° 51′ N}{5° 18′ W}};
+\pic at (0\horizdist,-\vertdist) {countrycard2={Republic of Liberia}{lr}{5,437,249}{43,000 sq mi}{\$9.718 bn}{Monrovia}{6° 19′ N}{10° 48′ W}};
+\pic at (\horizdist,-\vertdist) {countrycard2={Islamic Republic\\[0.25ex]of Mauritania}{mr}{4,328,040}{400,000 sq mi}{\$33.414 bn}{Nouakchott}{18° 09′ N}{15° 58′ W}};
+\end{tikzpicture}
+\end{document}
