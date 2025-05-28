@@ -1,0 +1,17 @@
+\documentclass{standalone}
+
+\usepackage{flags}
+
+\setlength{\cardwidth}{2.16667in+0.25in}
+\setlength{\cardheight}{3.5in}
+\setlength{\bleed}{0in}
+\setlength{\horizspace}{0.0625in}
+\setlength{\horizdist}{\cardwidth + 2\bleed + \horizspace}
+\setlength{\vertspace}{0.0625in}
+\setlength{\vertdist}{\cardheight + 2\bleed + \vertspace}
+
+\begin{document}
+\begin{tikzpicture}
+\pic at (\horizdist,0) {flagcard={au}{black}};
+\end{tikzpicture}
+\end{document}

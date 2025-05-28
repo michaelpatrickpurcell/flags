@@ -1,0 +1,84 @@
+\usepackage{flags}
+
+\usetikzlibrary{shapes.geometric}
+
+\tikzset{pics/flagcross/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth +2\bleed, fill=#1] at (0,0) {};
+
+	\draw[line width=0.375in, #3] (-\cardwidth/2 - \bleed, 0) -- (\cardwidth/2 + \bleed, 0);	
+	\draw[line width=0.375in, #3] (0, -\cardheight/2 - \bleed) -- (0,\cardheight/2 + \bleed);	
+	
+	\draw[line width=0.25in, #2] (-\cardwidth/2 - \bleed, 0) -- (\cardwidth/2 + \bleed, 0);	
+	\draw[line width=0.25in, #2] (0, -\cardheight/2 - \bleed) -- (0,\cardheight/2 + \bleed);
+	
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#4}};
+}}}
+
+\tikzset{pics/flagbars/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight/3 + \bleed, minimum width=\cardwidth+2\bleed, fill=#1] at (0, \cardheight/3 + \bleed/2) {};
+	\node[inner sep=0pt, minimum height=\cardheight/3, minimum width=\cardwidth +2\bleed, fill=#2] at (0,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight/3 + \bleed, minimum width=\cardwidth+2\bleed, fill=#3] at (0, -\cardheight/3 - \bleed/2) {};
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#4}};
+}}}
+
+\tikzset{pics/flagstripes/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/3+\bleed, fill=#1] at (\cardwidth/3 + \bleed/2, 0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/3, fill=#2] at (0,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/3+\bleed, fill=#3] at (-\cardwidth/3 - \bleed/2, 0) {};
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#4}};
+}}}
+
+
+\tikzset{pics/flagchevron/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth, fill=#1] at (\cardwidth/2, 0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth, fill=#2] at (-\cardwidth/2, 0) {};
+	\node[inner sep=0pt, anchor=south, rotate=180, minimum width=2\bleed + \cardwidth / 0.86602540378, regular polygon, regular polygon sides=3, fill=#3] at(0, \cardheight/2 + 1.5773502\bleed) {};	
+	
+%	\node[inner sep=0pt, minimum height=\cardheight/3 + \bleed, minimum width=\cardwidth+2\bleed, fill=#3] at (0, -\cardheight/3 - \bleed/2) {};
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#4}};
+}}}
+

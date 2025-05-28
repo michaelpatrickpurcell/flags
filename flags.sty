@@ -267,3 +267,18 @@
 \end{scope}
 
 }}}
+
+
+\tikzset{pics/subsetcard/.style n args={2}{
+code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+	\node[rotate=90, transform shape] at (0,0) {\setmainfont[Scale=2.25]{Roboto}\Huge \textbf{#1}};
+	\end{scope}
+	\pic () at (0,0) {cutguide={#2}};
+}}}
