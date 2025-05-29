@@ -53,9 +53,34 @@
 	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
 	      cycle;
 
-	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/3+\bleed, fill=#1] at (\cardwidth/3 + \bleed/2, 0) {};
-	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/3, fill=#2] at (0,0) {};
-	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/3+\bleed, fill=#3] at (-\cardwidth/3 - \bleed/2, 0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5+\bleed, fill=#1] at (2\cardwidth/5 + \bleed/2, 0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5, fill=#2] at (\cardwidth/5,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5, fill=#3] at (0,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5, fill=#2] at (-\cardwidth/5,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5+\bleed, fill=#1] at (-2\cardwidth/5 - \bleed/2, 0) {};
+	
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#4}};
+}}}
+
+\tikzset{pics/flagstripescanton/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5+\bleed, fill=#1] at (2\cardwidth/5 + \bleed/2, 0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5, fill=#2] at (\cardwidth/5,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5, fill=#1] at (0,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5, fill=#2] at (-\cardwidth/5,0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth/5+\bleed, fill=#1] at (-2\cardwidth/5 - \bleed/2, 0) {};
+	
+	\node[fill=#3, anchor=north,  minimum height=3\cardwidth/5 + \bleed, minimum width=3\cardwidth/5 + \bleed] at (\cardwidth/5 + \bleed/2,\cardheight/2 + \bleed) {};
 	\end{scope}
 
 	\pic () at (0,0) {cutguide={#4}};
@@ -80,5 +105,46 @@
 	\end{scope}
 
 	\pic () at (0,0) {cutguide={#4}};
+}}}
+
+\tikzset{pics/flagpile/.style n args={5}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth, fill=#1] at (\cardwidth/2, 0) {};
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth, fill=#2] at (-\cardwidth/2, 0) {};
+	
+	\path[fill=#3, draw=#4, line width=0.075in] (0, -\cardheight/2+0.125in) -- (-\cardwidth/2 + 0.25\bleed, \cardheight/2 + \bleed) -- (\cardwidth/2 - 0.25\bleed, \cardheight/2 + \bleed) -- cycle;	
+
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#5}};
+%	\node[draw, white, minimum height=\cardheight, minimum width=\cardwidth] at (0,0) {};
+}}}
+
+\tikzset{pics/flagbend/.style n args={4}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth +2\bleed, fill=#1] at (0, 0) {};
+	
+	\path[fill=#2, draw=#3, line width=0.075in] (-\cardwidth/2 -\bleed, \cardheight/2 - 0.5in) -- (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) -- (-\cardwidth/2 + 0.5in, \cardheight/2 + \bleed) -- (\cardwidth/2 + \bleed, -\cardheight/2 + 0.5in) -- (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) -- (\cardwidth/2 - 0.5in, -\cardheight/2 - \bleed) -- cycle;	
+
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#4}};
+%	\node[draw, white, minimum height=\cardheight, minimum width=\cardwidth] at (0,0) {};
 }}}
 

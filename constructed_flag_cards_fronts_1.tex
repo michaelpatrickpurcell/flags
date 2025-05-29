@@ -16,16 +16,16 @@
 \begin{document}
 \begin{tikzpicture}
 \path (-105mm, -148.5mm) -- (105mm, 148.5mm);
-\pic at (-\horizdist,\vertdist) {flagchevron={Red}{White}{Black}{black}};
-\pic at (0\horizdist,\vertdist) {flagchevron={White}{Blue}{Green}{black}};
-\pic at (\horizdist,\vertdist) {flagchevron={Yellow}{Yellow}{Purple}{black}};
+\pic at (-\horizdist,\vertdist) {flagstripescanton={Blue}{White}{Red}{white}};
+\pic at (0\horizdist,\vertdist) {flagstripes={Green}{Yellow}{Black}{white}};
+\pic at (\horizdist,\vertdist) {flagcross={Yellow}{Black}{Black}{black}};
 %%
-\pic at (-\horizdist,0\vertdist) {flagcross={Yellow}{Black}{Black}{black}};
-\pic at (0\horizdist,0\vertdist) {flagcross={Blue}{Red}{White}{white}};
-\pic at (\horizdist,0\vertdist) {flagcross={Green}{Purple}{White}{black}};
+\pic at (-\horizdist,0\vertdist) {flagcross={Blue}{White}{White}{white}};
+\pic at (0\horizdist,0\vertdist) {flagcross={Red}{Green}{White}{white}};
+\pic at (\horizdist,0\vertdist) {flagpile={Red}{Red}{Black}{White}{black}};
 %%%
-\pic at (-\horizdist,-\vertdist) {flagbars={Black}{White}{Green}{white}};
-\pic at (0\horizdist,-\vertdist) {flagbars={Blue}{Yellow}{Blue}{white}};
-\pic at (\horizdist,-\vertdist) {flagbars={Purple}{White}{Red}{white}};
+\pic at (-\horizdist,-\vertdist) {flagpile={Yellow}{Yellow}{Blue}{Blue}{black}};
+\pic at (0\horizdist,-\vertdist) {flagpile={Green}{Green}{White}{White}{black}};
+%\pic at (\horizdist,-\vertdist) {flagbars={Purple}{White}{Red}{white}};
 \end{tikzpicture}
 \end{document}
