@@ -2,6 +2,31 @@
 
 \usetikzlibrary{shapes.geometric}
 
+\tikzset{star/.pic={
+	\node[star, star points=5, star point ratio=2.25, fill=#1, inner sep=0.0625in]  at (0,-0.01in) {};
+}}
+
+\tikzset{sun/.pic={
+	\node[star, star points=18, star point ratio=1.25, fill=#1, inner sep=0.105in]  at (0,0) {};
+}}
+
+\tikzset{sun2/.pic={
+	\node[circle, fill=#1, inner sep=0.125in]  at (0,0) {};
+}}
+
+\tikzset{pics/moon/.style n args={2}{
+	code={
+	\begin{scope}
+	\clip (-0.19in,-0.19in) rectangle (0.19in, 0.19in);
+	\begin{scope}
+	\clip (0.04,0) circle (0.18in);
+	\node[circle, fill=#1, inner sep=0.125in]  at (0.04,0) {};
+	\node[circle, fill=#2, inner sep=0.125in] at (0.1in, 0) {};
+	\end{scope}
+%	\node[circle, fill=#2, inner sep=0.1222in] at (0.213in, 0) {};
+	\end{scope}
+}}}
+
 \tikzset{pics/flagcross/.style n args={4}{
 	code={
 	\begin{scope}
@@ -21,7 +46,7 @@
 	\draw[line width=0.25in, #2] (0, -\cardheight/2 - \bleed) -- (0,\cardheight/2 + \bleed);
 	
 	\end{scope}
-
+%	\node[draw, minimum height=\cardheight, minimum width=\cardwidth] at (0,0) {};
 	\pic () at (0,0) {cutguide={#4}};
 }}}
 
@@ -120,7 +145,7 @@
 	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth, fill=#1] at (\cardwidth/2, 0) {};
 	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth, fill=#2] at (-\cardwidth/2, 0) {};
 	
-	\path[fill=#3, draw=#4, line width=0.075in] (0, -\cardheight/2+0.125in) -- (-\cardwidth/2 + 0.25\bleed, \cardheight/2 + \bleed) -- (\cardwidth/2 - 0.25\bleed, \cardheight/2 + \bleed) -- cycle;	
+	\path[fill=#3, draw=#4, line width=0.0875in] (0, -\cardheight/2+0.135in) -- (-\cardwidth/2 + 0.45\bleed, \cardheight/2 + \bleed) -- (\cardwidth/2 - 0.45\bleed, \cardheight/2 + \bleed) -- cycle;	
 
 	\end{scope}
 
@@ -140,7 +165,10 @@
 
 	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth +2\bleed, fill=#1] at (0, 0) {};
 	
-	\path[fill=#2, draw=#3, line width=0.075in] (-\cardwidth/2 -\bleed, \cardheight/2 - 0.5in) -- (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) -- (-\cardwidth/2 + 0.5in, \cardheight/2 + \bleed) -- (\cardwidth/2 + \bleed, -\cardheight/2 + 0.5in) -- (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) -- (\cardwidth/2 - 0.5in, -\cardheight/2 - \bleed) -- cycle;	
+%	\path[fill=#2, draw=#3, line width=0.075in] (-\cardwidth/2 -\bleed, \cardheight/2 - 0.5in) -- (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) -- (-\cardwidth/2 + 0.5in, \cardheight/2 + \bleed) -- (\cardwidth/2 + \bleed, -\cardheight/2 + 0.5in) -- (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) -- (\cardwidth/2 - 0.5in, -\cardheight/2 - \bleed) -- cycle;	
+
+	\draw[line width=0.875in, #2] (-1.1\cardwidth/2, 1.1\cardheight/2) -- (1.1\cardwidth/2, -1.1\cardheight/2);
+	\draw[line width=0.625in, #3] (-1.1\cardwidth/2, 1.1\cardheight/2) -- (1.1\cardwidth/2, -1.1\cardheight/2);
 
 	\end{scope}
 
@@ -148,3 +176,19 @@
 %	\node[draw, white, minimum height=\cardheight, minimum width=\cardwidth] at (0,0) {};
 }}}
 
+\tikzset{pics/flagblank/.style n args={2}{
+	code={
+	\begin{scope}
+	\clip (-\cardwidth/2 - \bleed, 0in) --%
+	      (-\cardwidth/2 - \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, \cardheight/2 + \bleed) --%
+	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
+	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
+	      cycle;
+
+	\node[inner sep=0pt, minimum height=\cardheight + 2\bleed, minimum width=\cardwidth +2\bleed, fill=#1] at (0, 0) {};
+	\end{scope}
+
+	\pic () at (0,0) {cutguide={#2}};
+%	\node[draw, white, minimum height=\cardheight, minimum width=\cardwidth] at (0,0) {};
+}}}

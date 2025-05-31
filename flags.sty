@@ -29,11 +29,11 @@
 \tikzset{cardbackpattern/.pic={
 	\foreach \i in {-1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in}
 		\foreach \j in {-1.75in, -1.5in, -1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in, 1.5in, 1.75in}
-			\draw[ultra thick, black] (\i,\j) circle (0.105in);
+			\draw[ultra thick, #1] (\i,\j) circle (0.105in);
 
 	\foreach \i in {-1.375in, -1.125in, -0.875in,-0.625in, -0.375in, -0.125in, 0.125in, 0.375in, 0.625in, 0.875in, 1.125in, 1.375in}
 		\foreach \j in {-1.875in, -1.625in, -1.375in, -1.125in, -0.875in, -0.625in, -0.375in, -0.125in, 0.125in, 0.375in, 0.625in, 0.875in, 1.125in, 1.375in, 1.625in, 1.875in}
-			\draw[ultra thick, black] (\i,\j) circle (0.105in);
+			\draw[ultra thick, #1] (\i,\j) circle (0.105in);
 			
 	\foreach \i in {-1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in}
 		\foreach \j in {-1.75in, -1.5in, -1.25in, -1.0in, -0.75in, -0.5in, -0.25in, 0in, 0.25in, 0.5in, 0.75in, 1.0in, 1.25in, 1.5in, 1.75in}
@@ -278,7 +278,7 @@ code={
 	      (\cardwidth/2 + \bleed, -\cardheight/2 - \bleed) --%
 	      (-\cardwidth/2 - \bleed, -\cardheight/2 - \bleed) --%
 	      cycle;
-	\node[rotate=90, transform shape] at (0,0) {\setmainfont[Scale=2.25]{Roboto}\Huge \textbf{#1}};
+	\node[rotate=90, transform shape, text width=3in, align=center] at (0,0) {\setmainfont[Scale=1.5]{Roboto}\Huge \textbf{#1}};
 	\end{scope}
 	\pic () at (0,0) {cutguide={#2}};
 }}}
